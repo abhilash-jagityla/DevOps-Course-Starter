@@ -1,11 +1,12 @@
+from operator import itemgetter
 from flask import Flask, redirect, render_template, request
-from todo_app.data.session_items import add_item, get_items
+from todo_app.data.Trello_items import add_item, get_items, move_item_to_done
+# from todo_app.data.Trello_items import add_item
 
 from todo_app.flask_config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config())
-
 
 @app.route('/')
 def index():
@@ -16,4 +17,8 @@ def index():
 def add_todo():
     new_todo_title = request.form.get('title')
     add_item(new_todo_title)
+    return redirect('/')
+@app.route('/complete-item/<todo_id>', methods=["POST"])
+def complete_itemgetter(todo_id): # type: ignore
+    move_item_to_done(todo_id)
     return redirect('/')
