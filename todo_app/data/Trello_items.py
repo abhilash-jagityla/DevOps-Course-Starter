@@ -1,6 +1,8 @@
 import requests
 import os
 
+from todo_app.item import Item
+
 def add_item(title):
     import ssl
     context = ssl.create_default_context()
@@ -52,8 +54,9 @@ def get_items():
 
     for trello_list in response_list:
         for trello_card in trello_list['cards']:
-            trello_card['status'] = trello_list['name']
-            items.append(trello_card)                  
+            item = Item.from_trello_card(trello_card,trello_list)
+            items.append(item)         
+                     
     return items
 
 def move_item_to_done(item_id) :
