@@ -6,6 +6,6 @@ class Item:
     
     @classmethod
     def from_trello_card(cls, card, card_list):
-        return cls(card['id'], card['name'], card_list['name'])
+        return Item(card['id'], card['name'], list['name'])
 
     
