@@ -5,3 +5,4 @@ COPY . /app
 WORKDIR /app
 RUN poetry install
 ENTRYPOINT poetry run flask run --host 0.0.0.0
+#commit first working dockerfile
