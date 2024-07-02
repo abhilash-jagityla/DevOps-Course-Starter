@@ -74,7 +74,7 @@ poetry run pytest
 (Please make sure you have run `poetry install` beforehand to install `pytest`)
 
 If instead you'd like to run your test via Docker please run the following
-```
+```bash
 docker build --tag todo-app:test --target test .
 docker run todo-app:test
 ```
