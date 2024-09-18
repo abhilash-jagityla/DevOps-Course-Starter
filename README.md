@@ -99,7 +99,7 @@ docker run --publish 5001:5000 -it --env-file .env todo-app:prod
 ## Diagrams
 Architecture diagrams can be found in the `diagrams1 subfolder. They were built using [app.diagrams.net] (app.diagrams.net)(you can use the `.draw.io` file to edit these diagrams).
 
-##Azure Hosting
+## Azure Hosting
 The container image that us deployed to Azure is hosted on Docker hub at https://hub.docker.com/repository/docker/abhilashjagityla1/abhilash16-todo-app/general
 
 The website itself is hosted at https://abhilashjagitylaappservice.azurewebsites.net/ 
