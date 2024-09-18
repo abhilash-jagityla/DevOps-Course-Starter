@@ -98,3 +98,17 @@ docker run --publish 5001:5000 -it --env-file .env todo-app:prod
 
 ## Diagrams
 Architecture diagrams can be found in the `diagrams1 subfolder. They were built using [app.diagrams.net] (app.diagrams.net)(you can use the `.draw.io` file to edit these diagrams).
+
+## Azure Hosting
+The container image that us deployed to Azure is hosted on Docker hub at https://hub.docker.com/repository/docker/abhilashjagityla1/abhilash16-todo-app/general
+
+The website itself is hosted at https://abhilashjagitylaappservice.azurewebsites.net/ 
+
+To update the website you will need to run the following commands to build and push the updated container image:
+
+``bash
+docker build --tag abhilashjagityla1/abhilash16-todo-app --target production .
+docker push abhilashjagityla1/abhilash16-todo-app
+```
+
+Next you will need to make a POST request to the webhook link provided on the app Service (under the Deployment Centre tab). This will trigger Azure to pull the updated image from Docker Hub.
