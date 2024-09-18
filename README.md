@@ -104,7 +104,7 @@ The container image that us deployed to Azure is hosted on Docker hub at https:/
 
 The website itself is hosted at https://abhilashjagitylaappservice.azurewebsites.net/ 
 
-To update the website you will need to ru the following commands to build and push the updated container image:
+To update the website you will need to run the following commands to build and push the updated container image:
 
 ``bash
 docker build --tag abhilashjagityla1/abhilash16-todo-app --target production .
