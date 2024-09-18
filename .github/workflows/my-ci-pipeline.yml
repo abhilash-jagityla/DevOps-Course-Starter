@@ -16,7 +16,7 @@ jobs:
     - run: docker build --tag todo-app:test --target test .
     - run: docker run todo-app:test
 
-    deploy:
+  deploy:
       name: push to Docker Hub and Trigger App Service Deploy
       runs-on: ubuntu-latest
       needs: build
