@@ -28,5 +28,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      - run: docker build --tag "abhilashjagityla1/todo-app:prod --target production"
+      - run: docker build --tag abhilashjagityla1/todo-app:prod --target production .
       - run: docker push abhilashjagityla1/todo-app:prod
