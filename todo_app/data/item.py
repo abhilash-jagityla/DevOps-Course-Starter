@@ -8,4 +8,8 @@ class Item:
     def from_trello_card(cls, card, card_list):
         return Item(card['id'], card['name'], list['name'])
 
+    @classmethod
+    def from_mongo_document(cls, document):
+        return Item(document['id'], document['name'], document['status'])
+
     

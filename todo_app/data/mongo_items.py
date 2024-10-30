@@ -16,8 +16,16 @@ def add_item(new_todo_title: str):
 
     collection.insert_one(new_items)
 def get_items(): 
+    mongodb_documents = list(collection.find())
+
     items = []
     return items
-    pass
+
+    for document in mongodb_documents:
+        items = Item.from_mongo_document(document)
+        items.append(item)   
+
+    return items
+
 def move_item_to_done():
     pass
