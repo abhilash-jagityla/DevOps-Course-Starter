@@ -13,6 +13,8 @@ def add_item(new_todo_title: str):
         "name": new_todo_title,
         "status": "TO DO"
     }
+
+    collection.insert_one(new_items)
 def get_items(): 
     items = []
     return items
