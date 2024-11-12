@@ -16,14 +16,19 @@ def client():
         with test_app.test_client() as client:
             yield client
 
+def jls_extract_def():
+    
+    return 
+
+
 def test_index_page(client):
     # Arrange
 
     mongo_client = pymongo.MongoClient(os.getenv("MONGODB_CONNECTION_STRING"))
 
-    db = client[os.getenv("MONGODB_DATABASE_NAME")]
+    db = mongo_client[os.getenv("MONGODB_DATABASE_NAME")]
 
-    collection = db[os.getenv("MONGODB_COLLECTION_NAME")]
+    collection = db[os.getenv("MONGODB_COLLECTION_NAME")] = jls_extract_def()
 
     test_document = {
         "name": "Test Item" ,
