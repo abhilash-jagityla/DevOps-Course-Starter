@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv, find_dotenv
+from todo_app.data.mongo_items import add_item
 import pymongo
 import pytest
 from todo_app import app
@@ -28,7 +29,7 @@ def test_index_page(client):
 
     db = mongo_client[os.getenv("MONGODB_DATABASE_NAME")]
 
-    collection = db[os.getenv("MONGODB_COLLECTION_NAME")] = jls_extract_def()
+    collection = db[os.getenv("MONGODB_COLLECTION_NAME")] 
 
     test_document = {
         "name": "Test Item" ,
@@ -43,5 +44,7 @@ def test_index_page(client):
     # Assert
     assert response.status_code == 200
     assert 'Test Item' in response.data.decode()
+
+
 
 

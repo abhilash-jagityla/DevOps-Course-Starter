@@ -1,4 +1,4 @@
-from bson import objectId
+from bson import ObjectId
 import pymongo
 import os
 
@@ -40,5 +40,5 @@ def get_items():
 def move_item_to_done(todo_id: str):
     collection = get_collection()
 
-    collection.update_one({"_id": objectId(todo_id)}, {"$set" : {"status": "Done"}})
+    collection.update_one({"_id": ObjectId(todo_id)}, {"$set" : {"status": "Done"}})
     pass
